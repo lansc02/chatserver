@@ -1,0 +1,1 @@
+2021-05-04T15:37:25.633087: Broadcast from stephan: stephan has entered the room.2021-05-04T15:37:40.601183: Broadcast from kerstin: kerstin has entered the room.2021-05-04T15:38:05.427673: Broadcast from stephan: stephan has left the room.2021-05-04T15:38:09.918231: Broadcast from kerstin: kerstin has left the room.
