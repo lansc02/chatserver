@@ -56,7 +56,10 @@ public class ChatClient implements Runnable {
         }
         try {
             System.out.println("interrupting thread....");
-            this.clients.remove(this); //threadsafety??
+            if (ChatServer.lockObj.tryLock()) {
+                this.clients.remove(this); //threadsafety??
+                ChatServer.lockObj.unlock();
+            }
             this.broadcast(this.name + " has left the room.", true);
             Thread.currentThread().interrupt();
         } catch (Exception e) {
@@ -141,6 +144,5 @@ public class ChatClient implements Runnable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return;
     }
 }

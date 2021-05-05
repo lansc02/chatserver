@@ -7,13 +7,14 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class ChatServer {
+    public static Lock lockObj = new ReentrantLock();
+
     public static void main(String[] args) {
         Logger log = new Logger("./log.txt");
         HashMap<String, ChatClient> usersMap = new HashMap<>();
         ArrayList<ChatClient> users = new ArrayList<>();
         try (ServerSocket ss = new ServerSocket(5678)) {
             System.out.println("Server started");
-            Lock lockObj = new ReentrantLock();
 
             while (true) {
                 try {

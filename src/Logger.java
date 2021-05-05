@@ -29,7 +29,7 @@ public class Logger {
 
     public void writeLogEntry(String entry) {
         String timestamp = LocalDateTime.now().toString();
-        logWriter.print(timestamp + ": " + entry);
+        logWriter.println(timestamp + ": " + entry);
         logWriter.flush();
     }
 }
